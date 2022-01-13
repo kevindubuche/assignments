@@ -35,6 +35,7 @@
 <div class="grid-container">
   <div class="grid-item"></div>
   <div class="grid-item" >
+
     <mat-stepper [linear]="isLinear" #stepper>
 
         <mat-step  [stepControl]="assignmentsForm" label="Etape 1/3">
@@ -54,7 +55,7 @@
           </mat-form-field>
           <br>
           <mat-form-field>
-            <mat-label>Nom du devoir</mat-label>
+            <mat-label>Nom de l'élève</mat-label>
             <input required matInput  formControlName="auteur" name="auteur" placeholder="Nom de l'élève">
           </mat-form-field>
 
@@ -83,7 +84,7 @@
             <textarea matInput required formControlName="remarque"  name="remarque" rows="5" placeholder="Remarques" ></textarea>
           </mat-form-field>
 
-          <mat-slide-toggle  color="primary" (click)="switchRenduStatus()">Rendu</mat-slide-toggle>
+          <mat-slide-toggle  color="primary" (click)="switchRenduStatus()" >Rendu</mat-slide-toggle>
 
 
 <!--          <div>-->
@@ -95,13 +96,13 @@
         <mat-step [stepControl]="assignmentsForm" label="Etape 3/3" >
           <form ngForm [formGroup]="assignmentsForm"  class="form" (submit)="onFormSubmit()" >
          <mat-label>
-            <ul>
+            <ul class="recap">
               <li>Nom du devoir: <strong>{{assignmentsForm.value['nom']}} </strong></li>
               <li>Matière:  <strong>{{assignmentsForm.value['matiere']}}</strong></li>
               <li>Nom de l'élève: <strong>{{assignmentsForm.value['auteur']}}</strong></li>
-              <li>Date de rendu: <strong>{{assignmentsForm.value['dateDeRendu']}}</strong></li>
+              <li>Date de rendu: <strong>{{assignmentsForm.value['dateDeRendu'] | date: 'dd/MM/yyyy'}}</strong></li>
               <li>Note sur 20: <strong>{{assignmentsForm.value['note']}}</strong></li>
-              <li>Rendu : <strong>{{assignmentsForm.value['rendu']}}</strong></li>
+              <li>Rendu : <strong>{{rendu ? 'OUI' : 'NON'}}</strong></li>
               <li>Remarques:  <strong>{{assignmentsForm.value['remarque']}}</strong></li>
             </ul>
           </mat-label>

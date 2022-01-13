@@ -107,3 +107,9 @@
 .content{
   font-size: 12px;
 }
+.name{
+  font-size: 11px;
+  font-style: italic;
+  float: left;
+  justify-content: left;
+}

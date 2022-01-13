@@ -32,9 +32,9 @@ export class AddAssignmentComponent implements OnInit {
   ngOnInit(): void {
     this.assignmentsForm = this.formBuilder.group({
       nom : ['', Validators.required,],
-      dateDeRendu : ['', Validators.required],
+      dateDeRendu : ['',],
       auteur : ['', Validators.required],
-      remarque : ['', Validators.required],
+      remarque : ['', ],
       matiere : ['', Validators.required],
       note : [''],
       rendu : ['', ]
@@ -46,14 +46,16 @@ export class AddAssignmentComponent implements OnInit {
     if (this.assignmentsForm.status == "VALID") {
       console.log(this.assignmentsForm)
       const newAssignment:Assignment = new Assignment();
-      newAssignment.nom = this.nom;
-      newAssignment.dateDeRendu = this.dateDeRendu;
-      newAssignment.rendu = false;
-      newAssignment.matiere = this.matiere;
-      newAssignment.auteur = this.auteur;
-      newAssignment.note = 0;
-      newAssignment.remarque = this.remarque;
+      newAssignment.nom = this.assignmentsForm.value['nom'];
+      newAssignment.dateDeRendu = this.assignmentsForm.value['dateDeRendu'];
+      newAssignment.matiere = this.assignmentsForm.value['matiere'];
+      newAssignment.auteur = this.assignmentsForm.value['auteur'];
+      newAssignment.note = this.assignmentsForm.value['note'];
+      newAssignment.remarque = this.assignmentsForm.value['remarque'];
       newAssignment.rendu = this.rendu;
+      if(newAssignment.note == undefined)
+        newAssignment.rendu = false;
+
 
       //this.assignments.push(newAssignment);
       // On envoie le nouvel assignment sous la forme d'un événement
@@ -72,7 +74,8 @@ export class AddAssignmentComponent implements OnInit {
   }
 
   switchRenduStatus(){
-    this.rendu = !this.rendu;
-    console.log("Rendu is: "+ this.rendu)
+      this.rendu = !this.rendu;
+      console.log("Rendu is: "+ this.rendu)
   }
+
 }

@@ -62,25 +62,24 @@
       <div
         cdkDropList
         #todoList="cdkDropList"
-        [cdkDropListData]="todo"
+        [cdkDropListData]="done"
         [cdkDropListConnectedTo]="[doneList]"
         class="example-list"
         (cdkDropListDropped)="drop($event)"
         cdkDrag
         [cdkDragDisabled]="true"
       >
-        <div  *ngFor="let item of todo" cdkDrag>
+        <div  *ngFor="let item of done" cdkDrag>
           <mat-card class="example-card">
             <mat-card-title-group>
               <mat-card-title>
-
                   <mat-list-item (click)="assignmentClique(item)">
                     <a routerLink="/assignment/{{item.id}}">
                       <strong><span class="title">{{item.nom}}</span></strong>
                     </a>
                     <br>
-                    <p>{{item.auteur}}ppp</p>
-                    <mat-card-content class="content">
+                    <span class="name">{{item.auteur}}</span><br>
+                    <mat-card-content class="name">
                       The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog
                       from Japan.
                     </mat-card-content>
@@ -97,18 +96,15 @@
 
     <div class="grid-item">
       <!--      PARTIE DROITE-->
-
-<!--      <div class="example-container">-->
        <h6>Non Rendus<br><mat-icon>clear</mat-icon></h6>
-
         <div
           cdkDropList
           #doneList="cdkDropList"
-          [cdkDropListData]="done"
+          [cdkDropListData]="todo"
           [cdkDropListConnectedTo]="[todoList]"
           class="example-list"
           (cdkDropListDropped)="drop($event)">
-          <div  *ngFor="let item of done" cdkDrag>
+          <div  *ngFor="let item of todo" cdkDrag>
             <mat-card class="example-card">
               <mat-card-title-group>
                 <mat-card-title>
@@ -131,9 +127,5 @@
         </div>
       </div>
   </div>
-
-
-
-
 
 </main>

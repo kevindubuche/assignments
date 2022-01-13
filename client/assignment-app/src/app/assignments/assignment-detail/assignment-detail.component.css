@@ -2,4 +2,57 @@
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
+  padding-top: 15%;
 }
+
+.form {
+  display:flex;
+  flex-direction: column;
+  margin:20px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% auto  20%;
+  padding: 10px;
+}
+.grid-item {
+  padding: 20px;
+  text-align: center;
+}
+
+.form-input{
+  width: 100%;
+}
+.aboutProf{
+  font-size: 13px;
+  font-style: italic;
+  float: left;
+  justify-content: left;
+
+}
+.imageProf{
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+
+}
+.card-container {
+  display: grid;
+  grid-template-columns: 25% auto  25%;
+}
+.card-item {
+  text-align: center;
+  padding: 3%;
+  justify-content: center;
+}
+.border-left {
+  border-left: 1px solid grey;
+}
+.book-image{
+  width: 100%;
+  height: 100%;
+  border-radius: 25px;
+}
+

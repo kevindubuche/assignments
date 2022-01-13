@@ -18,3 +18,8 @@
 .form-input{
   width: 100%;
 }
+.recap{
+  font-size: 11px;
+  font-style: italic;
+  float: left;
+}

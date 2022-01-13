@@ -41,7 +41,7 @@ export class AssignmentsService {
     return this.http.get<Assignment>(this.url + "/" + id)
     .pipe(
       map(a => {
-        a.nom += " MODIFIE PAR UN MAP";
+        // a.nom += " MODIFIE PAR UN MAP";
         return a;
       }),
       tap(a => {
