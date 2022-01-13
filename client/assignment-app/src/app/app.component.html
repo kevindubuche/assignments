@@ -1,0 +1,34 @@
+ <div class="grid-container">
+   <div class="grid-item"></div>
+   <div class="grid-item">
+     <mat-toolbar>
+       <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+         <mat-icon>menu</mat-icon>
+       </button>
+       <a routerLink="/home"><span>Assignments App</span></a>
+       <span class="example-spacer"></span>
+       <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+         <mat-icon>favorite</mat-icon>
+       </button>
+       <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+         <mat-icon>share</mat-icon>
+       </button>
+       <mat-slide-toggle color="primary" (click)="login()">Admin</mat-slide-toggle>
+       <div class="ajouterBtn">
+         <a routerLink="/add">
+           <button mat-flat-button color="primary">
+             <mat-icon>add</mat-icon>
+             Assignment
+           </button>
+         </a>
+
+       </div>
+     </mat-toolbar>
+   </div>
+ </div>
+
+
+<!--
+<app-assignments></app-assignments>
+-->
+<router-outlet></router-outlet>
