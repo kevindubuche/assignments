@@ -3,6 +3,9 @@ let app = express();
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
 
+var AuthController = require('./auth/AuthController');
+app.use('/api/auth', AuthController);
+
 let mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 //mongoose.set('debug', true);

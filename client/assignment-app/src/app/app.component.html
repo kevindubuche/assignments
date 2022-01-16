@@ -1,27 +1,27 @@
  <div class="grid-container">
    <div class="grid-item"></div>
    <div class="grid-item">
-     <mat-toolbar>
+     <mat-toolbar class="toobar">
        <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
-         <mat-icon>menu</mat-icon>
+         <a routerLink="/">
+         <mat-icon class="white-icon">home</mat-icon>
+         </a>
        </button>
-       <a routerLink="/home"><span>Assignments App</span></a>
+       <a routerLink="/home" class="logoname"><span>Assignments App</span></a>
        <span class="example-spacer"></span>
-       <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-         <mat-icon>favorite</mat-icon>
-       </button>
-       <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-         <mat-icon>share</mat-icon>
-       </button>
        <mat-slide-toggle color="primary" (click)="login()">Admin</mat-slide-toggle>
+       <div class="ajouterBtn cloud">
+           <mat-icon class="white-icon" (click)="peuplerBD()">cloud_upload</mat-icon>
+       </div>
        <div class="ajouterBtn">
          <a routerLink="/add">
-           <button mat-flat-button color="primary">
-             <mat-icon>add</mat-icon>
-             Assignment
-           </button>
+             <mat-icon class="white-icon">library_books</mat-icon>
          </a>
-
+       </div>
+       <div class="ajouterBtn ">
+         <a routerLink="/add">
+             <mat-icon class="white-icon" >person</mat-icon>
+         </a>
        </div>
      </mat-toolbar>
    </div>

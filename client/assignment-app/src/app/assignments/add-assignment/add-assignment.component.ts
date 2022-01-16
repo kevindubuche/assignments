@@ -15,7 +15,7 @@ export class AddAssignmentComponent implements OnInit {
   dateDeRendu?:Date;
   auteur = "";
   remarque = "";
-  note?: Number;
+  note?: number;
   matiere = "";
   rendu = false;
 

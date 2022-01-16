@@ -81,7 +81,8 @@ export class AssignmentsService {
     // avec le tableau, comme l'assignment est un pointeur sur une case, on a rien besoin
     // de faire....
     //return of("Assignment " + assignment.nom + " modifié");
-
+  console.log("PUT CALLED");
+    console.log(assignment);
     return this.http.put<Assignment>(this.url, assignment);
   }
 

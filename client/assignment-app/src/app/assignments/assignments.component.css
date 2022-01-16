@@ -103,6 +103,7 @@
 }
 .title{
   font-size: 13px;
+  color: black;
 }
 .content{
   font-size: 12px;
@@ -112,4 +113,30 @@
   font-style: italic;
   float: left;
   justify-content: left;
+  text-align: left;
+}
+.date{
+  font-size: 10px;
+  color: grey;
+  font-weight: bold;
+  text-align: left;
+  margin-top: 10%;
+}
+.check-icon{
+  color: green;
+}
+.non-check-icon{
+  color: red;
+}
+.grid-item-paginator {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+
+}
+.grid-container-paginator {
+  display: grid;
+  grid-template-columns: 20% auto auto 20%;
+  padding: 10px;
+  margin-bottom: -100px;
 }

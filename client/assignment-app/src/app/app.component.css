@@ -45,3 +45,25 @@ section {
   font-size: 30px;
   text-align: center;
 }
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+.logoname{
+  margin-bottom: -5px;
+  text-decoration: none;
+  font-family: 'Schoolbell', arial, serif;
+  font-weight: bold;
+  color: white;
+}
+
+.toobar{
+  background-image: linear-gradient(to right, #ca81f1, #cde780);
+}
+.white-icon{
+  color: white;
+  padding: 10px;
+}
+.cloud{
+  cursor: pointer;
+}

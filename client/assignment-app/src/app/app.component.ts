@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from './shared/auth.service';
+import  { AssignmentsService } from "./shared/assignments.service";
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,9 @@ import { AuthService } from './shared/auth.service';
 export class AppComponent {
   titre = "Application de gestion des Assignments";
 
-  constructor(private authService:AuthService, private router:Router) {}
+  constructor(private authService:AuthService,
+              private router:Router,
+              private assignmentsService: AssignmentsService,) {}
 
   login() {
     if(!this.authService.loggedIn) {
@@ -19,5 +22,15 @@ export class AppComponent {
       this.authService.logOut();
       this.router.navigate(["/home"]);
     }
+  }
+
+  peuplerBD() {
+    //this.assignmentsService.peuplerBD();
+
+    this.assignmentsService.peuplerBDAvecForkJoin().subscribe(() => {
+      // replaceUrl = true force le refresh de la page même si elle est
+      // actuellement affichée
+      this.router.navigate(['/home'], { replaceUrl: true });
+    });
   }
 }

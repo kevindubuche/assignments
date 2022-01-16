@@ -27,6 +27,7 @@ import {MatSelectModule} from "@angular/material/select";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatPaginatorModule} from "@angular/material/paginator";
 
 const routes:Routes = [
   {
@@ -55,16 +56,16 @@ const routes:Routes = [
     AddAssignmentComponent,
     EditAssignmentComponent
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        MatButtonModule, MatIconModule, MatDividerModule,
-        FormsModule, MatFormFieldModule, MatInputModule,
-        MatDatepickerModule, MatNativeDateModule,
-        MatListModule, MatCardModule, MatCheckboxModule,
-        MatSlideToggleModule, HttpClientModule,
-        RouterModule.forRoot(routes), MatSelectModule, DragDropModule, MatStepperModule, MatToolbarModule, ReactiveFormsModule
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    MatButtonModule, MatIconModule, MatDividerModule,
+    FormsModule, MatFormFieldModule, MatInputModule,
+    MatDatepickerModule, MatNativeDateModule,
+    MatListModule, MatCardModule, MatCheckboxModule,
+    MatSlideToggleModule, HttpClientModule,
+    RouterModule.forRoot(routes), MatSelectModule, DragDropModule, MatStepperModule, MatToolbarModule, ReactiveFormsModule, MatPaginatorModule
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

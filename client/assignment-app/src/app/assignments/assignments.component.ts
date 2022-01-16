@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AssignmentsService } from '../shared/assignments.service';
 import { Assignment } from './assignment.model';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import {PageEvent} from "@angular/material/paginator";
 
 
 @Component({
@@ -16,6 +17,7 @@ export class AssignmentsComponent implements OnInit {
 
   done : Assignment[] = [];
 
+
   drop(event: CdkDragDrop<Assignment[], any>) {
     if (event.previousContainer === event.container) {
       moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
@@ -26,6 +28,36 @@ export class AssignmentsComponent implements OnInit {
         event.previousIndex,
         event.currentIndex,
       );
+      console.log("PUT action");
+    //  let choosenAssignment = this.assignments.filter((assign) => assign.id === this.SELECTED_ID)[0];
+    //  let choosenAssignment = this.assignments.find(element => element.id == this.SELECTED_ID);
+      console.log(this.assignmentSelectionne);
+      // let modifyAssigment = (ass:Assignment) => {
+      //   ass!.rendu =  !(ass!.rendu);
+      //   console.log((ass!.rendu))
+      //   return Promise.resolve(ass);
+      // };
+      //
+      // //this.assignmentSelectionne!.rendu =  !this.assignmentSelectionne!.rendu;
+      // modifyAssigment(this.assignmentSelectionne!).then((modifiedAssignment)=>{
+      //     this.assignmentsService.updateAssignment(modifiedAssignment);
+      //     console.log("Assignment rendu status switched");
+      //   console.log(modifiedAssignment);
+      //   }
+      // )
+
+
+      this.assignmentSelectionne!.rendu = !this.assignmentSelectionne!.rendu;
+      this.assignmentsService
+        .updateAssignment(this.assignmentSelectionne!)
+        .subscribe((reponse) => {
+          console.log(reponse.message);
+        });
+
+      console.log(event.previousContainer.data);
+      console.log( event.container.data);
+      console.log(event.previousIndex);
+      console.log(event.currentIndex);
     }
   }
 
@@ -84,7 +116,7 @@ export class AssignmentsComponent implements OnInit {
 
   assignmentClique(assignment: Assignment) {
     this.assignmentSelectionne = assignment;
-    console.log('assignment clique = ' + assignment.nom);
+    console.log('assignment target = ' + assignment.nom);
   }
 
   /*
@@ -128,4 +160,10 @@ export class AssignmentsComponent implements OnInit {
   pageSuivante() {
       this.getAssignments(this.nextPage, this.limit);
   }
+
+  onPageChange(event: PageEvent){
+    console.log({ event });
+    this.getAssignments(event.pageIndex +1, event.pageSize);
+  }
+
 }

@@ -58,11 +58,6 @@
             <mat-label>Nom de l'élève</mat-label>
             <input required matInput  formControlName="auteur" name="auteur" placeholder="Nom de l'élève">
           </mat-form-field>
-
-
-<!--          <div>-->
-<!--            <button type="texte" matStepperNext  mat-stroked-button color="primary">Suivant</button>-->
-<!--          </div>-->
           </form>
         </mat-step>
         <mat-step [stepControl]="assignmentsForm" label="Etape 2/3">
@@ -76,15 +71,15 @@
           <br>
           <mat-form-field>
             <mat-label>Note sur 20</mat-label>
-            <input required matInput formControlName="note"  name="note" placeholder="Note sur 20" type="number" min="0" max="20">
+            <input matInput formControlName="note"  name="note" placeholder="Note sur 20" type="number" min="0" max="20">
           </mat-form-field>
           <br>
           <mat-form-field>
             <mat-label>Remarques sur le devoir</mat-label>
-            <textarea matInput required formControlName="remarque"  name="remarque" rows="5" placeholder="Remarques" ></textarea>
+            <textarea matInput formControlName="remarque"  name="remarque" rows="5" placeholder="Remarques" ></textarea>
           </mat-form-field>
 
-          <mat-slide-toggle  color="primary" (click)="switchRenduStatus()" >Rendu</mat-slide-toggle>
+          <mat-slide-toggle  color="primary" (change)="switchRenduStatus()" >Rendu</mat-slide-toggle>
 
 
 <!--          <div>-->

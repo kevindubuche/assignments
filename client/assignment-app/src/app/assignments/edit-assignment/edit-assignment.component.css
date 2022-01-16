@@ -1,5 +1,25 @@
 .form {
   display:flex;
   flex-direction: column;
-  margin:5px;
+  margin:20px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 20% auto  20%;
+  padding: 10px;
+}
+.grid-item {
+  padding: 20px;
+  text-align: center;
+}
+
+.form-input{
+  width: 100%;
+}
+.recap{
+  font-size: 11px;
+  font-style: italic;
+  float: left;
 }

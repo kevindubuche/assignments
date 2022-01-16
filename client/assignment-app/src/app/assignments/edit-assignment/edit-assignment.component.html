@@ -1,19 +1,97 @@
-<div class="container" *ngIf="assignment">
-  <h1>Edition de l'assignment {{assignment.nom}}</h1>
-  <form ngForm class="form">
-    <mat-form-field>
-      <input matInput placeholder="Edition du nom"
-      [(ngModel)]="nomAssignment" name="assignment-name">
-    </mat-form-field>
-    <mat-form-field>
-      <input matInput [matDatepicker]="picker" placeholder="Edition de la date"
-      [(ngModel)]="dateDeRendu" name="date">
-      <mat-datepicker-toggle matSuffix [for]="picker">
-      </mat-datepicker-toggle>
-      <mat-datepicker #picker></mat-datepicker>
-    </mat-form-field>
-    <button mat-raised-button color="primary" (click)="onSaveAssignment()">
-      Sauver
-    </button>
-  </form>
+<!--<div class="container" *ngIf="assignment">-->
+<!--  <h1>Edition de l'assignment {{assignment.nom}}</h1>-->
+<!--  <form ngForm class="form">-->
+<!--    <mat-form-field>-->
+<!--      <input matInput placeholder="Edition du nom"-->
+<!--      [(ngModel)]="nomAssignment" name="assignment-name">-->
+<!--    </mat-form-field>-->
+<!--    <mat-form-field>-->
+<!--      <input matInput [matDatepicker]="picker" placeholder="Edition de la date"-->
+<!--      [(ngModel)]="dateDeRendu" name="date">-->
+<!--      <mat-datepicker-toggle matSuffix [for]="picker">-->
+<!--      </mat-datepicker-toggle>-->
+<!--      <mat-datepicker #picker></mat-datepicker>-->
+<!--    </mat-form-field>-->
+<!--    <button mat-raised-button color="primary" (click)="onSaveAssignment()">-->
+<!--      Sauver-->
+<!--    </button>-->
+<!--  </form>-->
+<!--</div>-->
+
+
+
+
+<div class="grid-container">
+  <div class="grid-item"></div>
+  <div class="grid-item" >
+
+    <mat-stepper [linear]="isLinear" #stepper>
+      <mat-step  [stepControl]="assignmentsForm" label="Etape 1/3">
+        <form ngForm [formGroup]="assignmentsForm"  class="form" (submit)="onSaveAssignment()" >
+          <mat-form-field>
+            <mat-label>Nom du devoir</mat-label>
+            <input required matInput formControlName="nom" name="nom" placeholder="Nom du devoir">
+          </mat-form-field>
+          <br>
+          <mat-form-field >
+            <mat-label>Matière</mat-label>
+            <mat-select formControlName="matiere">
+              <mat-option *ngFor="let matiere of listeDesMatieres"  [value]="matiere"  >
+                {{matiere}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label>Nom de l'élève</mat-label>
+            <input required matInput  formControlName="auteur" name="auteur" placeholder="Nom de l'élève">
+          </mat-form-field>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="assignmentsForm" label="Etape 2/3">
+        <form ngForm [formGroup]="assignmentsForm"  class="form" (submit)="onSaveAssignment()" >
+          <mat-form-field >
+            <mat-label>Date de rendu</mat-label>
+            <input required matInput [matDatepicker]="picker" formControlName="dateDeRendu"  name="dateDeRendu">
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label>Note sur 20</mat-label>
+            <input matInput formControlName="note"  name="note" placeholder="Note sur 20" type="number" min="0" max="20">
+          </mat-form-field>
+          <br>
+          <mat-form-field>
+            <mat-label>Remarques sur le devoir</mat-label>
+            <textarea matInput formControlName="remarque"  name="remarque" rows="5" placeholder="Remarques" ></textarea>
+          </mat-form-field>
+          <mat-slide-toggle  color="primary" checked="assigment.rendu" (change)="switchRenduStatus()" >Rendu</mat-slide-toggle>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="assignmentsForm" label="Etape 3/3" >
+        <form ngForm [formGroup]="assignmentsForm"  class="form" (submit)="onSaveAssignment()" >
+          <mat-label>
+            <ul class="recap">
+              <li>Nom du devoir: <strong>{{assignmentsForm.value['nom']}} </strong></li>
+              <li>Matière:  <strong>{{assignmentsForm.value['matiere']}}</strong></li>
+              <li>Nom de l'élève: <strong>{{assignmentsForm.value['auteur']}}</strong></li>
+              <li>Date de rendu: <strong>{{assignmentsForm.value['dateDeRendu'] | date: 'dd/MM/yyyy'}}</strong></li>
+              <li>Note sur 20: <strong>{{assignmentsForm.value['note']}}</strong></li>
+              <li>Rendu : <strong>{{rendu ? 'OUI' : 'NON'}}</strong></li>
+              <li>Remarques:  <strong>{{assignmentsForm.value['remarque']}}</strong></li>
+            </ul>
+          </mat-label>
+          <div>
+            <!--            <button mat-button mat-stroked-button color="primary"  matStepperPrevious>Précédent</button>-->
+            <!--            <button mat-button mat-stroked-button color="primary"  (click)="stepper.reset()">Recommencer</button>-->
+            <button  mat-button mat-stroked-button color="primary">Enregistrer</button>
+          </div>
+        </form>
+      </mat-step>
+
+
+    </mat-stepper>
+
+  </div>
 </div>
