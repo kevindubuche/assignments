@@ -1,0 +1,18 @@
+.add-button {
+  background-image: linear-gradient(to right, #ca81f1, #cde780);
+  color: white;
+}
+a{
+  text-decoration: none;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 35% auto 35%;
+  padding: 10px;
+}
+.grid-item {
+  padding: 20px;
+  font-size: 12px;
+  text-align: center;
+}

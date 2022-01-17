@@ -1,0 +1,32 @@
+
+<div class="grid-container">
+  <div class="grid-item"></div>
+  <div class="grid-item">
+    <form ngForm #assignmentForm [formGroup]="usersForm" class="form" (submit)="onFormSubmit()" >
+  <h2> <p>Add a user</p></h2>
+  <mat-form-field>
+    <mat-label>Email</mat-label>
+    <input required matInput name="email" placeholder="Email" formControlName="email">
+    <mat-error>
+            <span *ngIf="!usersForm.controls['email'].valid
+            && usersForm.controls['email'].touched "
+            >Please enter the email</span>
+    </mat-error>
+  </mat-form-field><br>
+  <mat-form-field>
+    <mat-label>Password</mat-label>
+    <input required matInput type="password" name="password" placeholder="Password" formControlName="password">
+    <mat-error>
+            <span *ngIf="!usersForm.controls['password'].valid
+            && usersForm.controls['password'].touched "
+            >Please enter the password</span>
+    </mat-error>
+  </mat-form-field>
+  <button mat-flat-button style="margin-top: 100px" type="submit" class="buttonAppearance">
+    <mat-icon>add</mat-icon>
+    Add user
+  </button>
+
+</form>
+  </div>
+</div>

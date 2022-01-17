@@ -9,18 +9,40 @@
        </button>
        <a routerLink="/home" class="logoname"><span>Assignments App</span></a>
        <span class="example-spacer"></span>
-       <mat-slide-toggle color="primary" (click)="login()">Admin</mat-slide-toggle>
-       <div class="ajouterBtn cloud">
-           <mat-icon class="white-icon" (click)="peuplerBD()">cloud_upload</mat-icon>
+<!--       <mat-slide-toggle color="primary" (click)="login()">Admin</mat-slide-toggle>-->
+       <div class="ajouterBtn cloud" *ngIf="isLoggedIn()">
+           <mat-icon class="white-icon" (click)="peuplerBD()" >cloud_upload</mat-icon>
        </div>
-       <div class="ajouterBtn">
+       <div class="ajouterBtn" *ngIf="isLoggedIn()">
          <a routerLink="/add">
              <mat-icon class="white-icon">library_books</mat-icon>
          </a>
        </div>
+       <div class="ajouterBtn" *ngIf="isLoggedIn()">
+         <a routerLink="/user-list">
+           <mat-icon class="white-icon" >person</mat-icon>
+         </a>
+       </div>
        <div class="ajouterBtn ">
-         <a routerLink="/add">
-             <mat-icon class="white-icon" >person</mat-icon>
+         <a *ngIf="!isLoggedIn()" routerLink="/login" >
+           <div>
+             <div class="div-icon-login">
+               <mat-icon class="white-icon" >fingerprint</mat-icon>
+             </div>
+             <div class="div-icon-text">
+               <span>Log in</span>
+             </div>
+           </div>
+         </a>
+         <a *ngIf="isLoggedIn()" (click)="logout()">
+           <div>
+             <div class="div-icon-login">
+            <mat-icon class="white-icon" >fingerprint</mat-icon>
+             </div>
+             <div class="div-icon-text">
+             <span class="login-text">Log out</span>
+             </div>
+           </div>
          </a>
        </div>
      </mat-toolbar>

@@ -1,0 +1,38 @@
+<form ngForm #assignmentForm [formGroup]="usersForm"  class="form" (submit)="onFormSubmit()" >
+  <div class="grid-container">
+    <div></div>
+    <div>
+      <div style="margin-top: 5px" class="header">Sign in</div>
+      <div class="wecome">
+        <img class="user-avatar" src="https://global-uploads.webflow.com/5e4627609401e01182af1cce/5eb13bfdb4659efea4f8dace_profile-dummy.png" />
+        <p>Welcome !<br>
+          Please sign in to access content !</p>
+      </div>
+      <div >
+        <mat-form-field class="form-container">
+          <mat-label>Email</mat-label>
+          <input required type="email" matInput name="email" placeholder="Email" formControlName="email">
+          <mat-error>
+            <span *ngIf="!usersForm.controls['email'].valid
+            && usersForm.controls['email'].touched "
+            >Please enter the email</span>
+          </mat-error>
+        </mat-form-field>
+        <br>
+        <mat-form-field class="form-container">
+          <mat-label>Password</mat-label>
+          <input required matInput type="password" name="password" placeholder="Password" formControlName="password">
+          <mat-error>
+            <span *ngIf="!usersForm.controls['password'].valid
+            && usersForm.controls['password'].touched "
+            >Please enter the password</span>
+          </mat-error>
+        </mat-form-field>
+        <button type="submit" class="submit"  >
+          Log in
+        </button>
+      </div>
+      <div class="footer">&copy; All rights reserved MBDS-2022</div>
+    </div>
+  </div>
+</form>

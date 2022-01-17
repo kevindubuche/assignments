@@ -17,7 +17,7 @@ export class AppComponent {
 
   login() {
     if(!this.authService.loggedIn) {
-      this.authService.logIn();
+    //  this.authService.logIn();
     } else {
       this.authService.logOut();
       this.router.navigate(["/home"]);
@@ -30,7 +30,16 @@ export class AppComponent {
     this.assignmentsService.peuplerBDAvecForkJoin().subscribe(() => {
       // replaceUrl = true force le refresh de la page même si elle est
       // actuellement affichée
+      alert("Success !");
       this.router.navigate(['/home'], { replaceUrl: true });
     });
+  }
+
+  isLoggedIn():boolean {
+    return localStorage.getItem('access_token') != null ;
+  }
+  logout() {
+    this.authService.logOut();
+    this.router.navigate(["/home"]);
   }
 }

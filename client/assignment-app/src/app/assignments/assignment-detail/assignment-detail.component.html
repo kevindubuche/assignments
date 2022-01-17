@@ -27,8 +27,8 @@
 <!--              <mat-checkbox *ngIf='!assignmentTransmis.rendu' (click)="onAssignmentRendu()">-->
 <!--                Rendu-->
 <!--              </mat-checkbox>-->
-              <button mat-stroked-button [disabled]="!isAdmin()" color="primary" (click)="onClickEdit()">EDIT</button>
-              <button mat-raised-button color="warn" (click)="onDelete()">DELETE</button>
+              <button mat-stroked-button *ngIf="isAdmin()"  color="primary" (click)="onClickEdit()">EDIT</button>
+              <button mat-raised-button color="warn" (click)="onDelete()" *ngIf="isAdmin()">DELETE</button>
             </div>
           </div>
 

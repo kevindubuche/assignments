@@ -85,7 +85,7 @@
 <!--        cdkDrag-->
 <!--        [cdkDragDisabled]="false"-->
         <div  *ngFor="let item of done" >
-          <mat-card  class="example-box" (cdkDragStarted)="assignmentClique(item)" cdkDrag >
+          <mat-card  class="example-box" (cdkDragStarted)="assignmentClique(item)" cdkDrag  [cdkDragDisabled]="!(isLoggedIn())">
             <mat-card-title-group >
               <mat-card-title>
                   <mat-list-item >
@@ -121,7 +121,7 @@
           class="example-list"
           (cdkDropListDropped)="drop($event)">
           <div  *ngFor="let item of todo" >
-            <mat-card class="example-box" (cdkDragStarted)="assignmentClique(item)" cdkDrag [cdkDragDisabled]="!(item.note >=0 && item.note <= 20 && item.note != undefined)">
+            <mat-card class="example-box" (cdkDragStarted)="assignmentClique(item)" cdkDrag [cdkDragDisabled]="!(item.note >=0 && item.note <= 20 && item.note != undefined && isLoggedIn())">
               <mat-card-title-group>
                 <mat-card-title>
                   <mat-list-item >

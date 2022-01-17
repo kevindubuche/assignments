@@ -1,0 +1,78 @@
+.rendu {
+  color: green;
+}
+
+.nonRendu {
+  color:red;
+  background-color: yellow;
+  border: 2px dashed orange;
+}
+
+.container {
+  display:flex;
+  flex-direction: column;
+}
+
+.ajouterBtn {
+  align-self: flex-end;
+}
+.image{
+  border-radius: 15px;
+  width: 200px;
+}
+.image-content{
+  margin: 10px;
+}
+.content {
+  padding: 16px;
+}
+
+.content > mat-card {
+
+}
+
+.items {
+  display: flex;
+  font-size: 15px;
+  text-align: left;
+  margin: 5px;
+
+}
+.item-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+  background-color: white;
+}
+.item-right-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.product {
+  width: 200px;
+  height: 200px;
+}
+.title {
+  font-size: 20px;
+  color: #ff6e14;
+}
+a{
+  text-decoration: none;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 35% auto 35%;
+  padding: 10px;
+}
+.grid-item {
+  padding: 20px;
+  font-size: 12px;
+  text-align: center;
+}
+

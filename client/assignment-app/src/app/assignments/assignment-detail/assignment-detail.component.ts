@@ -84,6 +84,6 @@ export class AssignmentDetailComponent implements OnInit {
   }
 
   isAdmin():boolean {
-    return this.authService.loggedIn;
+    return localStorage.getItem('access_token') != null ;
   }
 }

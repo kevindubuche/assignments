@@ -1,0 +1,23 @@
+<div class="grid-container">
+  <div class="grid-item"></div>
+  <div class="grid-item">
+      <div class="container" *ngIf="user">
+        <h1>Edit user {{user.email}}</h1>
+        <form ngForm class="form">
+          <mat-form-field>
+            <input matInput placeholder="Email"
+                   [(ngModel)]="email" name="email">
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="password" placeholder="Password"
+                   [(ngModel)]="password" name="password">
+          </mat-form-field>
+
+          <button mat-flat-button class="buttonAppearance" (click)="onSaveUser()">
+            <mat-icon>edit</mat-icon>
+            Edit user
+          </button>
+        </form>
+      </div>
+        </div>
+</div>

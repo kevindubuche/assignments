@@ -166,4 +166,7 @@ export class AssignmentsComponent implements OnInit {
     this.getAssignments(event.pageIndex +1, event.pageSize);
   }
 
+  isLoggedIn():boolean {
+    return localStorage.getItem('access_token') != null ;
+  }
 }

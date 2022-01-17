@@ -1,0 +1,27 @@
+<div class="grid-container">
+  <div class="grid-item"></div>
+  <div class="grid-item">
+<mat-card *ngIf="userTransmis">
+  <mat-card-title>{{userTransmis.email}}</mat-card-title>
+
+
+  <div class="items" >
+    <div>
+      <img class="product"  src="https://global-uploads.webflow.com/5e4627609401e01182af1cce/5eb13bfdb4659efea4f8dace_profile-dummy.png"  />
+    </div>
+    <div class="item-right">
+      <div class="item-right-content">
+        <div><strong>
+            {{userTransmis.email}}
+          </strong>
+      </div>
+    </div>
+  </div>
+  </div>
+  <div class="bottom">
+    <button mat-raised-button *ngIf="isAdmin()"  (click)="onClickEdit()">EDIT</button>
+    <button mat-raised-button  *ngIf="isAdmin()"  (click)="onDelete()">DELETE</button>
+  </div>
+</mat-card>
+  </div>
+</div>

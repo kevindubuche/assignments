@@ -2,13 +2,14 @@ let express = require('express');
 let app = express();
 let bodyParser = require('body-parser');
 let assignment = require('./routes/assignments');
-
+let  users =  require('./routes/users');
 var AuthController = require('./auth/AuthController');
-app.use('/api/auth', AuthController);
 
 let mongoose = require('mongoose');
 mongoose.Promise = global.Promise;
 //mongoose.set('debug', true);
+
+
 
 // remplacer toute cette chaine par l'URI de connexion à votre propre base dans le cloud s
 //const uri = 'mongodb+srv://mb:toto@cluster0.xtr0u.mongodb.net/assignments?retryWrites=true&w=majority';
@@ -41,6 +42,7 @@ app.use(function (req, res, next) {
 // Pour les formulaires
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
+app.use('/api/auth', AuthController);
 
 let port = process.env.PORT || 8010;
 
@@ -55,6 +57,8 @@ app.route(prefix + '/assignments')
 app.route(prefix + '/assignments/:id')
   .get(assignment.getAssignment)
   .delete(assignment.deleteAssignment);
+
+app.use('/api/users', users);
 
 // On démarre le serveur
 app.listen(port, "0.0.0.0");

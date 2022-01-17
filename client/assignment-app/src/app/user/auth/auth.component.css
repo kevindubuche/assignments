@@ -1,0 +1,98 @@
+@media all and (min-width: 992px) {
+  .grid-container {
+    grid-template-columns: 35% 30% 35%;
+  }
+}
+.grid-container {
+  display: grid;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-style: normal;
+  font-size: 17px;
+}
+.header {
+  background-image: linear-gradient(to right, #ca81f1, #cde780);
+  color: white;
+  text-align: left;
+  padding: 5%;
+  font-weight: bold;
+}
+.nav {
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-size: 12px;
+  width: 100%;
+}
+.nav > div {
+  text-align:center;
+  width:50%;
+  margin-bottom: -10px;
+
+}
+.nav > div:hover {
+  background-color: #2222;
+  cursor: pointer;
+}
+.wecome {
+  background-color: #e5e2e2;
+  color: gray;
+  padding-bottom: 5%;
+}
+.user-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 40px;
+  margin-top: 25px;
+
+}
+.items {
+  display: flex;
+  font-size: x-small;
+  text-align: left;
+  margin: 5px;
+
+}
+.item-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  padding: 5px;
+  background-color: white;
+}
+.item-right-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.product {
+  width: 100px;
+  height: 100px;
+}
+
+.submit {
+  background-image: linear-gradient(to right, #ca81f1, #cde780);
+  color: white;
+  cursor: pointer;
+  width: 80%;
+  padding: 12px 20px;
+  display: inline-block;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+
+}
+
+.footer {
+  background-image: linear-gradient(to right, #ca81f1, #cde780);
+  color: white;
+  text-align: left;
+  padding: 3%;
+}
+
+.form-container {
+  width: 70%;
+  padding: 20px;
+}

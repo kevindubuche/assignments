@@ -22,12 +22,18 @@ import { AddAssignmentComponent } from './assignments/add-assignment/add-assignm
 import { Routes, RouterModule } from '@angular/router';
 import { EditAssignmentComponent } from './assignments/edit-assignment/edit-assignment.component';
 import { AuthGuard } from './shared/auth.guard';
-import { HttpClientModule } from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {MatSelectModule} from "@angular/material/select";
 import {DragDropModule} from "@angular/cdk/drag-drop";
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatPaginatorModule} from "@angular/material/paginator";
+import {UsersComponent} from "./user/users/users.component";
+import {EditUserComponent} from "./user/edit-user/edit-user.component";
+import {AuthComponent} from "./user/auth/auth.component";
+import {AddUserComponent} from "./user/add-user/add-user.component";
+import {DetailUserComponent} from "./user/detail-user/detail-user.component";
+import { AuthInterceptor } from './shared/AuthInterceptor';
 
 const routes:Routes = [
   {
@@ -37,7 +43,8 @@ const routes:Routes = [
     path:"home", component: AssignmentsComponent
   },
   {
-    path:"add", component: AddAssignmentComponent
+    path:"add", component: AddAssignmentComponent,
+    canActivate : [AuthGuard]
   },
   {
     path:"assignment/:id", component: AssignmentDetailComponent
@@ -45,6 +52,23 @@ const routes:Routes = [
   {
     path:"assignment/:id/edit", component: EditAssignmentComponent,
     canActivate : [AuthGuard]
+  },
+  {
+    path:"user-list", component: UsersComponent
+  },
+  {
+    path:"user-add", component: AddUserComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path:"user/:id/edit", component: EditUserComponent,
+    canActivate : [AuthGuard]
+  },
+  {
+    path:"user/:id", component: DetailUserComponent
+  },
+  {
+    path:"login", component: AuthComponent
   },
 ]
 @NgModule({
@@ -54,7 +78,12 @@ const routes:Routes = [
     RenduDirective,
     AssignmentDetailComponent,
     AddAssignmentComponent,
-    EditAssignmentComponent
+    EditAssignmentComponent,
+    UsersComponent,
+    AddUserComponent,
+    EditUserComponent,
+    DetailUserComponent,
+    AuthComponent,
   ],
   imports: [
     BrowserModule,
@@ -66,7 +95,13 @@ const routes:Routes = [
     MatSlideToggleModule, HttpClientModule,
     RouterModule.forRoot(routes), MatSelectModule, DragDropModule, MatStepperModule, MatToolbarModule, ReactiveFormsModule, MatPaginatorModule
   ],
-  providers: [],
+  providers: [
+    // {
+    //   provide: HTTP_INTERCEPTORS,
+    //   useClass: AuthInterceptor,
+    //   multi: true
+    // }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

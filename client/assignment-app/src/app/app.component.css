@@ -67,3 +67,17 @@ section {
 .cloud{
   cursor: pointer;
 }
+
+a{
+  text-decoration: none;
+}
+.div-icon-login{
+  margin-top: 10px;
+}
+.div-icon-text{
+  color: white;
+  cursor: pointer;
+  font-size: 12px;
+  margin-top: -20px;
+}
+

@@ -1,0 +1,22 @@
+.form {
+  display:flex;
+  flex-direction: column;
+  margin:5px;
+}
+
+.buttonAppearance
+{
+  background-image: linear-gradient(to right, #ca81f1, #cde780);
+  color: white;
+  margin: 5px;
+}
+.grid-container {
+  display: grid;
+  grid-template-columns: 35% auto 35%;
+  padding: 10px;
+}
+.grid-item {
+  padding: 20px;
+  font-size: 12px;
+  text-align: center;
+}
