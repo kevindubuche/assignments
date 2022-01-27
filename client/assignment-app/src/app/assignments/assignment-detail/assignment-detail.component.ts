@@ -4,6 +4,7 @@ import { AssignmentsService } from 'src/app/shared/assignments.service';
 import { AuthService } from 'src/app/shared/auth.service';
 
 import { Assignment } from '../assignment.model';
+import { data__listeDesMatieres } from "../../shared/data";
 
 @Component({
   selector: 'app-assignment-detail',
@@ -81,6 +82,10 @@ export class AssignmentDetailComponent implements OnInit {
         fragment : 'edition'
       });
     }
+  }
+
+  getMatiereById(id: number) {
+    return data__listeDesMatieres.filter((matiere: { id: number; }) => matiere.id == id)[0]
   }
 
   isAdmin():boolean {

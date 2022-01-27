@@ -139,6 +139,7 @@ export class AssignmentsComponent implements OnInit {
     this.assignmentsService
       .deleteAssignment(assignment)
       .subscribe((message) => {
+        alert('Succes !');
         console.log(message);
       });
   }

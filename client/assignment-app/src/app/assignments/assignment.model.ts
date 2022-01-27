@@ -9,7 +9,7 @@ export class Assignment {
 
   remarque: string | undefined;
   auteur!: string;
-  matiere!: string;
+  matiere!: number;
   note!: number;
 
 }

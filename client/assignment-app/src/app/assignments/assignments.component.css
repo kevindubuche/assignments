@@ -49,7 +49,7 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
   box-sizing: border-box;
   cursor: move;
   background: white;
@@ -90,10 +90,11 @@
   border-radius: 50%;
   width: 60px;
   height: 60px;
+
 }
 .grid-container {
   display: grid;
-  grid-template-columns: 20% auto auto 20%;
+  grid-template-columns: 20% 30% 30% 20%;
   padding: 10px;
 }
 .grid-item {
@@ -120,7 +121,7 @@
   color: grey;
   font-weight: bold;
   text-align: left;
-  margin-top: 10%;
+  margin-top: 15%;
 }
 .check-icon{
   color: green;
@@ -139,4 +140,15 @@
   grid-template-columns: 20% auto auto 20%;
   padding: 10px;
   margin-bottom: -100px;
+}
+
+
+.flex-container{
+  display: flex;
+}
+.image-box{
+  width: 25%;
+}
+.info-box{
+  width: 75%;
 }

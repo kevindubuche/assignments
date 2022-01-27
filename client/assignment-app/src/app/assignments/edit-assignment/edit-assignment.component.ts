@@ -3,7 +3,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AssignmentsService } from 'src/app/shared/assignments.service';
 import { Assignment } from '../assignment.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-
+import { data__listeDesMatieres } from "../../shared/data";
 
 @Component({
   selector: 'app-edit-assignment',
@@ -19,12 +19,10 @@ export class EditAssignmentComponent implements OnInit {
   auteur: string | undefined = "";
   remarque: string | undefined = "";
   note?: number;
-  matiere: string | undefined = "";
+  matiere?: number;
   rendu: boolean | undefined = false;
 
-  listeDesMatieres: String[] = [
-    'Matiere 1', 'Matiere 2', 'Matiere 3', 'Matiere 4'
-  ];
+  listeDesMatieres = data__listeDesMatieres;
 
   isLinear = false;
 
@@ -71,7 +69,7 @@ export class EditAssignmentComponent implements OnInit {
             dateDeRendu: [this.dateDeRendu ,],
             auteur: [this.auteur, Validators.required],
             remarque: [this.remarque,],
-            matiere: [this.matiere, Validators.required],
+            matiere: [this.getMatiereById(this.matiere).id, Validators.required],
             note: [this.note],
             rendu: [this.rendu,]
           });
@@ -110,10 +108,14 @@ export class EditAssignmentComponent implements OnInit {
       .updateAssignment(this.assignment)
       .subscribe(reponse => {
         console.log(reponse.message);
-
+        alert('Succes !');
         // navigation vers la home page
         this.router.navigate(['/home']);
       });
+  }
+
+  getMatiereById(id: number | undefined) {
+    return data__listeDesMatieres.filter((matiere: { id: number; }) => matiere.id == id)[0]
   }
 
   switchRenduStatus(){

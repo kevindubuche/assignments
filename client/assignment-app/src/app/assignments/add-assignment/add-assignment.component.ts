@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { AssignmentsService } from 'src/app/shared/assignments.service';
 import { Assignment } from '../assignment.model';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { data__listeDesMatieres } from "../../shared/data";
 
 @Component({
   selector: 'app-add-assignment',
@@ -19,9 +20,7 @@ export class AddAssignmentComponent implements OnInit {
   matiere = "";
   rendu = false;
 
-  listeDesMatieres: String[] = [
-    'Matiere 1', 'Matiere 2', 'Matiere 3', 'Matiere 4'
-  ];
+  listeDesMatieres  = data__listeDesMatieres;
 
   isLinear = false;
 
@@ -65,7 +64,7 @@ export class AddAssignmentComponent implements OnInit {
       this.assignmentsService.addAssignment(newAssignment)
         .subscribe(reponse => {
           console.log(reponse.message);
-
+          alert('Succes !');
           // On re-affiche la liste
           this.router.navigate(['/home']);
         })
