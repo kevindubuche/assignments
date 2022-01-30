@@ -41,7 +41,7 @@
 - [x] **Au moins 1000 assignments**
 - [x] **A rendre sur github ([lien](https://github.com/kevindubuche/assignments)) et hébergé sur Heroku ([lien](https://assigments-dubuche-theodore.herokuapp.com/))**
 - [x] **Faire un README**
-- [x] **Vidéo sur YouTube ([lien](https://gitl))**
+- [x] **Vidéo sur YouTube ([lien](https://youtu.be/MnEJlDvxPPc))**
 
 
 - [x] **Ajouter une gestion de login/password**
@@ -101,6 +101,14 @@ cd api
 npm install 
 node server.js
 ```
+
+![role](imgs/q1.png)
+![role](imgs/q2.png)
+![role](imgs/q3.png)
+![role](imgs/q4.png)
+![role](imgs/q5.png)
+![role](imgs/q6.png)
+![role](imgs/q7.png)
 
 ## SOURCES
 * http://miageprojet2.unice.fr/Intranet_de_Michel_Buffa/M2_MBDS_2021-2022_Technos_Web/
