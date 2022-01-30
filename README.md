@@ -10,10 +10,10 @@
 <table>
   <tr>
     <td>
-           Nom
+          <strong>Nom</strong> 
     </td>
     <td>
-           Prénom
+           <strong>Prénom</strong> 
     </td>
   </tr>
   <tr>
@@ -21,7 +21,7 @@
            DUBUCHE
     </td>
     <td>
-           Barbara
+           Kevin
     </td>
   </tr>
   <tr>
