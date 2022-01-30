@@ -30,7 +30,8 @@ export class AppComponent {
     this.assignmentsService.peuplerBDAvecForkJoin().subscribe(() => {
       // replaceUrl = true force le refresh de la page même si elle est
       // actuellement affichée
-      alert("Success !");
+      alert("Success; All data have been saved!");
+      window.location.reload();
       this.router.navigate(['/home'], { replaceUrl: true });
     });
   }

@@ -1,7 +1,7 @@
 # ASSIGNMENTS PROJECT
 
 ## [DEMO](https://assigments-dubuche-theodore.herokuapp.com/)
-![role](imgs/client.gif)
+![role](imgs/gif.gif)
 
 
 ## REAISATIONS

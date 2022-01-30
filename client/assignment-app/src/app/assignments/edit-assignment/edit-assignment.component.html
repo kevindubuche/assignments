@@ -45,7 +45,7 @@
             <mat-label>Remarques sur le devoir</mat-label>
             <textarea matInput formControlName="remarque"  name="remarque" rows="5" placeholder="Remarques" ></textarea>
           </mat-form-field>
-          <mat-slide-toggle  color="primary" checked="assigment.rendu" (change)="switchRenduStatus()" >Rendu</mat-slide-toggle>
+          <mat-slide-toggle  color="primary" checked="{{rendu}}" (change)="switchRenduStatus()" >Rendu</mat-slide-toggle>
         </form>
       </mat-step>
       <mat-step [stepControl]="assignmentsForm" label="Etape 3/3" >

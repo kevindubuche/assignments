@@ -63,7 +63,7 @@ export class AssignmentDetailComponent implements OnInit {
           // Pour cacher l'affichage du détail (ne change pas la
           // valeur de l'assignment dans le tableau)
           this.assignmentTransmis = undefined;
-
+          alert('Success !');
           // On re-affiche la liste
           this.router.navigate(['/home']);
         });
