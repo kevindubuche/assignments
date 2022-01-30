@@ -4,6 +4,7 @@ import { catchError, forkJoin, map, Observable, of, tap } from 'rxjs';
 import { Assignment } from '../assignments/assignment.model';
 import { LoggingService } from './logging.service';
 import { bdInitialAssignments } from './data';
+import  { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -14,7 +15,7 @@ export class AssignmentsService {
   constructor(private loggingService:LoggingService,
     private http:HttpClient) { }
 
-  url = "http://localhost:8010/api/assignments";
+  url = `${environment.apiURL}assignments`;
 
   getAssignments():Observable<Assignment[]> {
     // typiquement, on ferait une requête GET sur un web

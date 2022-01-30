@@ -1,86 +1,27 @@
-# ASSIGNMENTS PROJECT
+# AssignmentApp
 
-## DEMO
-![role](imgs/client.gif)
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.0.1.
 
+## Development server
 
-## REAISATIONS
-1. Auteurs
-   
-Nom | Prénom |
-      ------- | ---------------- :
-      DUBUCHE  | Kevin
-      THEODORE  | Barbara
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-2. **Toutes les contraintes sont respectées**
+## Code scaffolding
 
-- [x] **Au moins 1000 assignments**
-- [x] **A rendre sur github ([lien](https://gitl)) et hébergé sur Heroku ([lien](https://gitl))**
-- [x] **Faire un README**
-- [x] **Vidéo sur YouTube ([lien](https://gitl))**
+Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
+## Build
 
-- [x] **Ajouter une gestion de login/password**
-- - [x] Formulaire + boutons connexion/deconnexion
-- - [x] Gérer l'affichage des boutons selon qu'on est connecté/déconnecté
-- - [x] Athentification se fera à l'aide de Json Web Tokens
-- - [x] Gérer le cas particulier admin (lui seul peut éditer/supprimer)
+Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
 
+## Running unit tests
 
-- [x] **Ajouter de nouvelles propriétés au modèle des Assignments**
-- - [x] Auteur (nom de l'élève)
-- - [x] Matière
-- - -[x] Une image sera associée à chaque matière + une photo du prof
-- - [x] Note sur 20
-- - [x] On ne peut marquer "rendu" un Assignment qui n'a pas été noté
-- - [x] Remarques sur l'assignment
-- - - [x] Au moins 1000 assignments
+Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
+## Running end-to-end tests
 
-- [x] **Améliorer l'affichage des Assignments**
-- - [x] Affichage sous forme de liste via des boutons de pagination
-- - [x] Les assignments sont affichés/édités/saisis
-- - - [x] fficher dans la liste des Assignments chaque Assignment sous forme d'une Material Card, avec le titre, la date, l'élève, une petite image illustrant la matière, la photo du prof en petit en haut à droite
-- - [x] Au moins 1000 assignments
-- - [x] Au moins 1000 assignments
-- - - [x] Au moins 1000 assignments
-- - [x] La vue détails montrera en plus les remarques, la note s'il a été rendu, etc
-- - [x] Les formulaires d'ajout et de détails proposeront un choix fixe de matières (et associeront automatiquement le prof et l'image illustrant la matière)
+Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
 
+## Further help
 
-- [x] **Afficher les Assignments sous forme de liste de material cards dans deux onglets séparés ou dans deux panels séparés sur la même page selon qu'ils ont été rendus ou pas encore rendus**
-- - [x] Lorsqu'on met une note à un Assignment et il devient rendu et apparaitra dans l'onglet "Rendu"
-- - [x] On pourra passer un assignment de non rendu à rendu en passant par la vue de détails, MAIS AUSSI EN LE DRAG'N'DROPPANT d'une liste à l'autre. (ou d'une liste dans l'onglet de l'autre liste)
-
-
-- [x] **Utiliser un Formulaire de type Stepper pour l'ajout d'Assignments (et pour la modification)**
-
-
-- [x] **Rendre le tout plus joli**
-
-
-- [x] **Hébergement sur Heroku.com obligatoire pour le front et pour le back ([lien](https://gitl))**
-
-
-
-## INSTALLATION
-
-
-| Commandes | Technologies      |
-------- | ---------------- | ---------- :
-Client  |```git clone ... cd ....npm install ng serve    ``` | Angular
-API  |``` git clone ...  cd ....  npm install  node server.js ```    | Node JS  e ...  cd ....  npm install  node server.js ```    | Node JS  
-
-```css
-// Client
-git clone ...
-cd ....
-npm install 
-ng serve 
-
-// API
-git clone ...
-cd ....
-npm install 
-node server.js
-```
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

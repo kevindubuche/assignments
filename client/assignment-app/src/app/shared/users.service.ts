@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { catchError, forkJoin, map, Observable, of, tap } from 'rxjs';
 import { LoggingService } from './logging.service';
 import { User} from "../user/user.model";
+import { environment } from "../../environments/environment";
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -21,8 +22,7 @@ export class UsersService {
   annonces: User[] = [];
 
   constructor(private http:HttpClient) { }
-  url = "http://localhost:8010/api/users";
-
+  url = `${environment.apiURL}users`;
   getUsers():Observable<User[]> {
     return this.http.get<User[]>(this.url);
   }

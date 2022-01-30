@@ -37,7 +37,7 @@ export class EditUserComponent implements OnInit {
       .subscribe((user) => {
         this.user = user;
         this.email = user?.email;
-        this.password = user?.password;
+        this.password = '';
       });
   }
 

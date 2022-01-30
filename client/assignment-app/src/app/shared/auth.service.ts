@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {User} from "../user/user.model";
 import {Observable} from "rxjs";
+import { environment } from "../../environments/environment";
 
 @Injectable({
   providedIn: 'root'
@@ -16,7 +17,8 @@ export class AuthService {
   // logIn() {
   //   this.loggedIn = true;
   // }
-  url = "http://localhost:8010/api/auth/login";
+  url = `${environment.apiURL}auth/login`;
+
 
 
   logIn(user:User):Observable<any> {
