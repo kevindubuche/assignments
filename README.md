@@ -21,7 +21,7 @@
            DUBUCHE
     </td>
     <td>
-           Kevin
+           Kevin J.
     </td>
   </tr>
   <tr>
@@ -29,7 +29,7 @@
            THEODORE
     </td>
     <td>
-           Barbara
+           Barbara G.
     </td>
   </tr>
 </table>
