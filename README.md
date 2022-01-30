@@ -5,13 +5,34 @@
 
 
 ## REAISATIONS
-1. Auteurs :sunglasses:
+1. Auteurs :sunglasses: :computer:
 
-
-Nom | Prénom |
-      ------- | ---------------- :
-DUBUCHE  | Kevin
-THEODORE  | Barbara
+<table>
+  <tr>
+    <td>
+           Nom
+    </td>
+    <td>
+           Prénom
+    </td>
+  </tr>
+  <tr>
+    <td>
+           DUBUCHE
+    </td>
+    <td>
+           Barbara
+    </td>
+  </tr>
+  <tr>
+    <td>
+           THEODORE
+    </td>
+    <td>
+           Barbara
+    </td>
+  </tr>
+</table>
 
 
 
